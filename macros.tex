@@ -1,0 +1,46 @@
+\usepackage{xspace}
+\usepackage{graphicx}
+\usepackage{xifthen}
+
+% begin paper organization macros
+\newcommand{\smallpaper}[2]{\item \bibentry{#1}~\\\hdashrule{2cm}{2pt}{1pt}~\\#2}
+
+\newenvironment{pgroup}[1]
+  {\section{#1}\begin{itemize}}
+  {\end{itemize}}
+  
+\newenvironment{paper}[1]
+  {\smallpaper{#1}{}}
+  {}
+% end paper organization macros
+
+% begin annotation macro
+\newcommand{\assumption}{\redbold{Assumption:}}
+\newcommand{\makered}[1]{\textcolor{red}{#1}}
+\newcommand{\redbold}[1]{\makered{\textbf{#1}}}
+\newcommand{\maybeNewline}{~\\*}
+\newcommand{\makenote}[1]{\maybeNewline\redbold{NOTE TO SELF:}\makered{#1}\maybeNewline}
+\newcommand{\mustread}{\maybeNewline\redbold{BE SURE TO READ THIS!!}\maybeNewline}
+\newcommand{\kw}[1]{\ensuremath{\mbox{{\sffamily{\bfseries\small {#1}}}}}}
+\newcommand{\irrelevant}[1][]{
+        \ifthenelse{\isempty{#1}}
+          {\redbold{No longer relevant}}
+          {\redbold{No longer relevant because #1}}
+}
+% end annotation macros
+
+% begin macros for lattices
+\newcommand{\ljoin}{\ensuremath{\sqcup}\xspace}
+\newcommand{\lmeet}{\ensuremath{\sqcap}\xspace}
+\newcommand{\lbottom}{\ensuremath{\perp}\xspace}
+\newcommand{\ltop}{\invert{\ensuremath{\lbottom}}\xspace}
+% end macros for lattices
+
+% begin macros for semantics
+\newcommand{\mtt}[1]{\ensuremath{\mathit{#1}}}
+\newcommand{\pair}[2]{\ensuremath{\langle #1, #2 \rangle}}
+% end macros for semantics
+
+% begin miscellaneous macros
+\newcommand{\invert}[1]{\rotatebox[origin=c]{180}{#1}}
+% end miscellaneous macros
