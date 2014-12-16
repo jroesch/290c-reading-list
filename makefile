@@ -5,4 +5,4 @@ paper:
 	pdflatex list
 
 clean:
-	rm list.aux list.bbl list.log list.blg
+	rm list.aux list.bbl list.log list.blg list.pdf
